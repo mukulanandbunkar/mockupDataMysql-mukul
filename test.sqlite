@@ -1,0 +1,68 @@
+SELECT * FROM users LIMIT 20;
+SELECT * FROM progress LIMIT 20;
+
+-- 2 (1)
+-- SELECT *
+-- FROM users
+-- WHERE email_domain LIKE '%edu%' 
+-- LIMIT 25;
+
+
+-- 2(2)
+-- SELECT COUNT(city)
+-- FROM users
+-- WHERE city = 'New York';
+
+-- 2(3)
+-- SELECT COUNT(mobile_app)
+-- FROM users
+-- WHERE mobile_app = 'mobile-user';
+
+
+-- 3
+-- SELECT sign_up_at,
+-- strftime('%S', sign_up_at)
+-- FROM users
+-- GROUP BY 1
+-- LIMIT 20;
+
+-- query for the sign up counts for each hour.
+-- SELECT sign_up_at,
+-- COUNT(strftime('%H', sign_up_at))
+-- FROM users
+-- GROUP BY strftime('%H', sign_up_at)
+-- ORDER BY strftime('%H', sign_up_at);
+
+-- 4-1
+-- QUERY TO JOIN OUT THE TABLE
+-- SELECT * 
+-- FROM users
+-- JOIN progress
+-- ON  users.user_id = progress.user_id;
+
+-- 4-2
+-- SELECT users.user_id,
+-- users.city,
+-- progress.learn_cpp,
+-- progress.learn_sql,
+-- progress.learn_html,
+-- progress.learn_javascript,
+-- progress.learn_java     
+-- FROM users
+-- JOIN progress
+-- ON  users.user_id = progress.user_id
+-- WHERE users.city = 'New York';
+
+
+-- 4-3
+-- SELECT users.user_id,
+-- users.city,
+-- progress.learn_cpp,
+-- progress.learn_sql,
+-- progress.learn_html,
+-- progress.learn_javascript,
+-- progress.learn_java     
+-- FROM users
+-- JOIN progress
+-- ON  users.user_id = progress.user_id
+-- WHERE users.city = 'Chicago';
